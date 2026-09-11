@@ -142,7 +142,7 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
 #cover::before{content:'';position:absolute;inset:0;background-image:
   repeating-linear-gradient(135deg, rgba(201,162,39,.03) 0px, rgba(201,162,39,.03) 2px, transparent 2px, transparent 42px);
   pointer-events:none}
-.cover-box{width:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.cover-box{width:100%;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;position:relative;z-index:2}
 .cover-header{text-align:center;flex-shrink:0}
 .cover-spacer{flex:1}
 .cover-footer{width:100%;max-width:540px;text-align:center;flex-shrink:0;padding:0 20px;display:flex;flex-direction:column;gap:clamp(8px,1.8vh,16px);align-items:center}
@@ -152,6 +152,7 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
 .cover-tag{display:block;font-family:'Crimson Text',serif;font-size:clamp(10.5px,1.9vh,14px);color:var(--paper);background:rgba(8,6,3,.5);border:1px solid rgba(201,162,39,.25);border-radius:12px;padding:clamp(8px,1.6vh,14px) 18px;margin-bottom:0;line-height:1.45;text-align:left;text-shadow:0 1px 3px rgba(0,0,0,.85);max-height:none;overflow:visible}
 .cover-chakana{font-size:clamp(16px,3.2vh,28px);margin-bottom:clamp(4px,1vh,8px);color:var(--gold);opacity:.9}
 .cname-wrap{margin-bottom:0}
+.cname-start-group{display:flex;flex-direction:column;align-items:center;gap:0;width:100%}
 .cname-input{width:100%;max-width:340px;padding:14px 20px;border-radius:30px;border:1.5px solid rgba(201,162,39,.55);background:rgba(8,6,3,.62);color:#FFFFFF;font-family:'Crimson Text',serif;font-weight:600;font-size:16px;text-align:center;outline:none;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.4)}
 .cname-input.cname-invalid{border-color:#e05555;box-shadow:0 0 0 3px rgba(224,85,85,.3)}
 .cname-error-slot{min-height:20px;display:flex;align-items:center;justify-content:center}
@@ -184,10 +185,14 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
 .puzzle-label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--goldd);font-weight:700;margin-bottom:12px}
 .puzzle-intro{font-size:15px;color:var(--inkl);margin-bottom:16px;line-height:1.7}
 .cipher-text{font-family:'Space Mono',monospace;font-size:19px;letter-spacing:.12em;color:var(--ink);background:var(--paper);border-radius:8px;padding:16px;text-align:center;word-break:break-all;margin-bottom:8px;border:1px dashed rgba(139,105,20,.35)}
+.ref-table{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;background:var(--paper);border-radius:8px;padding:14px;margin-bottom:14px;border:1px solid rgba(139,105,20,.2)}
+.ref-cell{display:flex;align-items:center;justify-content:center;gap:5px;font-size:13px;color:var(--inkl);font-family:'Space Mono',monospace}
+.ref-cell b{font-family:'Cinzel',serif;color:var(--ink);font-size:13px}
 
 .rulers-grid{display:grid;gap:10px;margin-bottom:8px}
-.ruler-card{background:var(--paper);border:1px solid rgba(139,105,20,.25);border-radius:10px;padding:13px 16px;font-size:14.5px;line-height:1.55;color:var(--inkl)}
+.ruler-card{background:var(--paper);border:1px solid rgba(139,105,20,.25);border-radius:10px;padding:13px 16px;font-size:14.5px;line-height:1.55;color:var(--inkl);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .ruler-card b{font-family:'Cinzel',serif;color:var(--ink);font-size:15px}
+.ruler-letter{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:15px}
 
 .answer-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
 .ans-input{flex:1;min-width:160px;padding:13px 16px;border-radius:10px;border:1px solid rgba(139,105,20,.3);font-family:'Space Mono',monospace;font-size:16px;letter-spacing:.06em;text-transform:uppercase;text-align:center;outline:none;background:var(--paper);min-height:44px;line-height:1.5}
@@ -284,6 +289,7 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
   .puzzle-box{padding:20px 16px}
   .fact-box{padding:15px 16px}
   .cipher-text{font-size:17px;padding:14px}
+  .ref-table{grid-template-columns:repeat(4,1fr);padding:12px}
   .answer-row{gap:12px}
   .nav-row{padding:0 8px;gap:8px}
   .navbtn{padding:12px 16px;font-size:12px}
@@ -311,6 +317,8 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
   .puzzle-box{padding:16px 12px}
   .fact-box{padding:12px 14px}
   .cipher-text{font-size:15px;padding:12px}
+  .ref-table{grid-template-columns:repeat(3,1fr);padding:10px;gap:5px}
+  .ref-cell{font-size:12px}
   .answer-row{flex-direction:column;gap:10px}
   .ans-input{width:100%;min-height:44px;font-size:16px}
   .abtn{width:100%;min-height:44px;font-size:14px}
@@ -357,6 +365,7 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
   .puzzle-box{padding:12px 10px}
   .fact-box{padding:10px 11px}
   .cipher-text{font-size:14px;padding:10px}
+  .ref-table{grid-template-columns:repeat(2,1fr);padding:8px;gap:4px}
   .answer-row{gap:8px}
   .nav-row{gap:4px}
   .navbtn{padding:8px 10px}
@@ -418,11 +427,13 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
     <div class="cover-spacer"></div>
     <div class="cover-footer">
       <p class="cover-tag">Dix étapes vous séparent d'un secret que les conquistadors n'ont jamais trouvé. Juillet 1911. L'expédition d'Hiram Bingham vient de découvrir les ruines endormies de Machu Picchu, cachées depuis près de quatre siècles au sommet de la Cordillère. Mais un vieux guide quechua, don Rumi, prétend qu'un secret bien plus ancien attend encore d'être révélé — un testament laissé par les derniers gardiens de l'empire inca, juste avant que les conquistadors ne referment leur étau sur Vilcabamba. Suivez-le à travers dix lieux sacrés du site, déchiffrez ce que la pierre a caché pendant quatre siècles, et devenez le premier — avant même Bingham — à lire ce testament jusqu'au bout.</p>
+      <div class="cname-start-group">
       <div class="cname-wrap">
         <input type="text" id="playerNameInput" class="cname-input" maxlength="30" data-i18n-ph="cov_name_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();startGame();}" oninput="document.getElementById('cnameError').classList.remove('show');this.classList.remove('cname-invalid')">
       </div>
       <div class="cname-error-slot"><p class="cname-error" id="cnameError" data-i18n="cov_name_required">Merci de saisir un pseudo pour commencer.</p></div>
       <button id="startBtn" onclick="startGame()" data-i18n="cov_start">Commencer l'ascension</button>
+      </div>
       <div class="cover-meta" data-i18n="cov_meta">10 étapes · Chronomètre · Indices</div>
     </div>
   </div>
@@ -465,7 +476,6 @@ body{font-family:'Crimson Text',serif;background:#12100B;color:var(--ink);min-he
     <p class="felic-txt" data-i18n="felic_txt">De Cusco à Machu Picchu, en passant par la porte du soleil, les terrasses, l'observatoire et la route royale, vous avez reconstitué le message que les Incas ont légué à travers les siècles — jamais trouvé par les conquistadors, révélé au monde par une expédition en 1911.</p>
     <div class="felic-word" id="felicWord"></div>
     <div class="felic-khipu">
-      <p class="felic-khipu-intro" data-i18n="felic_khipu_intro">🏆 Bravo, vous avez percé le secret des Incas !</p>
       <span class="felic-khipu-label" data-i18n="felic_khipu_label">La révélation du secret</span>
       <p class="felic-khipu-txt" data-i18n="felic_khipu_txt">Ce message n'est autre qu'un khipu narratif royal, d'une rareté extrême, que seul le grand chef — l'Inca lui-même — pouvait déchiffrer. Mais il a laissé de son vivant les clés nécessaires pour qu'un jour, un autre puisse le lire à son tour. Ce khipu renferme les dernières volontés de l'Inca, révélant l'emplacement d'un trésor... ou peut-être un secret d'État. Aujourd'hui encore, de nombreux archéologues se refusent à admettre qu'un khipu puisse raconter une histoire : pour eux, ces cordes nouées ne furent jamais que des outils comptables. Et pourtant, celui que vous tenez entre les mains semble prouver le contraire.</p>
     </div>
@@ -498,7 +508,6 @@ fr:{
   cov_start:"Commencer l'ascension",
   cov_meta:"10 étapes · Chronomètre · Indices",
   mj_title:"Panneau Maître du Jeu — Solutions",
-  felic_khipu_intro:"🏆 Bravo, vous avez percé le secret des Incas !",
   felic_title:"Le Secret d'Amaru",
   felic_txt:"De Cusco à Machu Picchu, en passant par la porte du soleil, les terrasses, l'observatoire et la route royale, vous avez reconstitué le message que les Incas ont légué à travers les siècles — jamais trouvé par les conquistadors, révélé au monde par une expédition en 1911.",
   felic_khipu_label:"La révélation du secret",
@@ -516,6 +525,12 @@ fr:{
   fact_label:"LE SAVIEZ-VOUS ?",
   rulers_label:"Remettez les souverains dans l'ordre chronologique de leur règne, puis assemblez leurs lettres.",
   tile_locked:"?",
+  thread_hint:"Suivez les couleurs. Chaque fil cache un secret.",
+  thread_found:"Lettres trouvées",
+  thread_reset:"Réinitialiser",
+  thread_wrong_thread:"⚠️ Vous changez de fil ! Recommencez avec une seule couleur.",
+  thread_success:"Exact ! Le message est ",
+  thread_wrong:"❌ Ce n'est pas le bon fil... Réessayez une autre couleur.",
   mj_sol:[
     ["Étape 1 — La Porte du Soleil","SOLSTICE"],
     ["Étape 2 — Les Terrasses Suspendues","TERRASSES"],
@@ -546,7 +561,6 @@ es:{
   cov_start:"Comenzar la ascensión",
   cov_meta:"10 etapas · Cronómetro · Pistas",
   mj_title:"Panel del Máster — Soluciones",
-  felic_khipu_intro:"🏆 ¡Enhorabuena, has descifrado el secreto de los Incas!",
   felic_title:"El Secreto de Amaru",
   felic_txt:"Desde Cusco hasta Machu Picchu, pasando por la puerta del sol, las terrazas, el observatorio y la ruta real, has reconstruido el mensaje que los incas legaron a través de los siglos — nunca hallado por los conquistadores, revelado al mundo por una expedición en 1911.",
   felic_khipu_label:"La revelación del secreto",
@@ -564,6 +578,12 @@ es:{
   fact_label:"¿SABÍAS QUE...?",
   rulers_label:"Ordena a los soberanos según la cronología de su reinado y reúne sus letras.",
   tile_locked:"?",
+  thread_hint:"Sigue los colores. Cada hilo oculta un secreto.",
+  thread_found:"Letras encontradas",
+  thread_reset:"Reiniciar",
+  thread_wrong_thread:"⚠️ ¡Estás cambiando de hilo! Comienza de nuevo con un solo color.",
+  thread_success:"¡Exacto! El mensaje es ",
+  thread_wrong:"❌ No es el hilo correcto... Prueba otro color.",
   mj_sol:[
     ["Etapa 1 — La Puerta del Sol","SOLSTICIO"],
     ["Etapa 2 — Las Terrazas Suspendidas","TERRAZAS"],
@@ -594,7 +614,6 @@ en:{
   cov_start:"Begin the climb",
   cov_meta:"10 stages · Timer · Hints",
   mj_title:"Game Master Panel — Solutions",
-  felic_khipu_intro:"🏆 Congratulations, you have cracked the Inca's secret!",
   felic_title:"Amaru's Secret",
   felic_txt:"From Cusco to Machu Picchu, through the Sun Gate, the terraces, the observatory and the royal road, you have pieced together the message the Incas left across the centuries — never found by the conquistadors, revealed to the world by an expedition in 1911.",
   felic_khipu_label:"The Secret's Revelation",
@@ -612,6 +631,12 @@ en:{
   fact_label:"DID YOU KNOW?",
   rulers_label:"Put the rulers in chronological order of their reign, then gather their letters.",
   tile_locked:"?",
+  thread_hint:"Follow the colors. Each thread hides a secret.",
+  thread_found:"Letters found",
+  thread_reset:"Reset",
+  thread_wrong_thread:"You are changing threads! Start over with a single color.",
+  thread_success:"Exact! The message is ",
+  thread_wrong:"That is not the right thread... Try another color.",
   mj_sol:[
     ["Stage 1 — The Sun Gate","SOLSTICE"],
     ["Stage 2 — The Hanging Terraces","TERRACES"],
@@ -632,11 +657,11 @@ en:{
 const STAGES = {
 fr:[
 {title:"La Porte du Soleil",sub:"Inti Punku — 24 juillet 1911",
- story:"Trois heures avant l'aube, don Rumi vous réveille sans un mot : il suffit de pointer le ciel encore noir pour que vous compreniez. Vous grimpez les derniers lacets du Chemin de l'Inca à la lueur d'une lampe à huile, les jambes lourdes, le souffle court dans l'air raréfié. Puis, d'un coup, la brume se déchire : un portail de pierre encadre exactement la citadelle endormie, suspendue entre deux pics comme un rêve qu'on aurait oublié de refermer. « Inti Punku », murmure don Rumi en posant la main sur la pierre froide. « La Porte du Soleil. Personne ne franchit ce seuil par hasard. » Sur le linteau, une main a gravé, des siècles plus tôt, un symbole solaire — et, dessous, une ligne de lettres que le temps, la pluie et les guerres n'ont jamais réussi à effacer.",
+ story:"Trois heures avant l'aube, don Rumi vous réveille sans un mot : il suffit de pointer le ciel encore noir pour que vous compreniez. Vous grimpez les derniers lacets du Chemin de l'Inca à la lueur d'une lampe à huile, les jambes lourdes, le souffle court dans l'air raréfié. Puis, d'un coup, la brume se déchire : un portail de pierre encadre exactement la citadelle endormie, suspendue entre deux pics comme un rêve qu'on aurait oublié de refermer. « Inti Punku », murmure don Rumi en posant la main sur la pierre froide. « La Porte du Soleil. Personne ne franchit ce seuil par hasard. » Sur le linteau, une main a gravé, des siècles plus tôt, un symbole solaire aux six rayons — et, dessous, une ligne de lettres que le temps, la pluie et les guerres n'ont jamais réussi à effacer. Don Rumi effleure les rayons du bout des doigts. « Sucta », dit-il doucement, comme une prière. « Six. Le nombre que les anciens appelaient le chiffre du cycle solaire — six pour le chemin, six pour le retour. »",
  fact:"Le jour du solstice de juin — hiver dans l'hémisphère sud — le soleil levant s'aligne exactement avec cette porte, comme s'il entrait dans la cité par la volonté des dieux.",
- puzzleIntro:"Le chiffre semble décalé d'un nombre simple, sans qu'aucune clé ne soit donnée nulle part sur la pierre. Il faudra la trouver par vous-même.",
+ puzzleIntro:"Les lettres semblent déplacées d'un nombre qui devrait parler à votre cœur. Don Rumi vous a laissé un indice — non pas écrit, mais murmuré, gravé dans les rayons mêmes du symbole solaire.",
  cipher:"YURYZOIK",
- hint:"Le solstice de juin tombe en... juin, le sixième mois de l'année. Décale chaque lettre du message de 6 rangs vers l'arrière dans l'alphabet — comme le soleil, au solstice, recule de 6 mois avant de revenir vers Inti Raymi.",
+ hint:"Sucta — six en quechua, le chiffre du cycle solaire que don Rumi a murmé. Décale chaque lettre du message de 6 rangs vers l'arrière dans l'alphabet — comme le soleil qui compte les six mois de son retour.",
  answer:"SOLSTICE"},
 {title:"Les Terrasses Suspendues",sub:"Andenes — Versant Ouest",
  story:"Le sentier plonge maintenant vers l'ouest, épousant les gradins de pierre qui dévalent la montagne comme un escalier taillé pour des géants. Don Rumi saute d'une terrasse à l'autre avec l'aisance de qui a grandi ici ; vous, vous avancez plus prudemment, un genou dans la terre fraîche encore humide de rosée. « Regardez sous vos pieds », dit-il en creusant un peu la terre du bout du doigt : une couche de gravier apparaît, puis, plus bas, du sable fin. « Trois couches, comme trois silences superposés. C'est ce qui a gardé la montagne debout, siècle après siècle, alors que la faille gronde juste en dessous. » Sur une pierre plate à demi enterrée, trois lignes de texte se chevauchent, entrelacées comme les strates du sol lui-même.",
@@ -644,7 +669,8 @@ fr:[
  puzzleIntro:"Le message a été tissé sur trois fils, à la manière d'un tocapu andin — un motif géométrique tissé en zigzag sur le métier à ceinture, puis lu fil par fil.",
  cipher:"TASERSERS",
  hint:"C'est le principe du tissage andin (tocapu) : réécris le texte en zigzag sur 3 fils/lignes pour retrouver l'ordre initial des lettres, comme on suit les fils d'un métier à tisser.",
- answer:"TERRASSES"},
+ answer:"TERRASSES",
+ isThreadGame:true},
 {title:"Le Torréon",sub:"Temple du Soleil",
  story:"À mesure que le soleil grimpe, la brume se retire de la cité comme un drap qu'on ôte lentement. Vous atteignez une tour semi-circulaire épousant la roche naturelle avec une précision qui vous laisse sans voix : pas un grain de mortier, et pourtant pas le moindre interstice où glisser une lame de couteau. Don Rumi vous fait signe de vous taire et de regarder par la fenêtre trapézoïdale : un rayon de lumière rase le mur intérieur, précis comme un fil tendu. « Le Torréon n'attend qu'un seul matin dans l'année pour parler », souffle-t-il. « Vous avez de la chance — ou pas. » Sur la pierre éclairée, une inscription semble être le reflet, inversé, d'un mot que vous ne parvenez pas encore à lire.",
  fact:"Le Torréon est aligné pour capter le lever du soleil du solstice de juin à travers sa fenêtre — un observatoire astronomique dédié à Inti, le dieu solaire, bâti en blocs de granit ajustés sans le moindre outil de fer.",
@@ -655,9 +681,9 @@ fr:[
 {title:"L'Intihuatana",sub:"Le Pilier qui Attache le Soleil",
  story:"Le chemin grimpe encore, jusqu'au point le plus haut du site, où un bloc de granit sculpté se dresse seul, aussi solitaire qu'un vieillard qui attend. Don Rumi s'accroupit devant lui avec un respect presque religieux. « Les prêtres venaient ici attacher le soleil — Inti —, au solstice, pour l'empêcher de s'éloigner trop loin de nous », dit-il, en suivant du regard l'ombre courte que le pilier projette sur la pierre. « Un cadran vivant. Le seul de tout le Pérou que les Espagnols n'ont jamais trouvé pour le briser. » Il se redresse et regarde vers l'horizon, au sud. « D'autres peuples, bien avant les Incas, traçaient déjà le ciel sur la terre elle-même — à des centaines de kilomètres d'ici, dans le désert. Des lignes immenses, visibles seulement d'en haut. Les Incas connaissaient ces géoglyphes ; certains prêtres venaient y étudier le mouvement des astres avant même de bâtir ce pilier. » Autour du socle, une série de lettres semble tourner avec les heures, comme si le temps lui-même avait été gravé dans la roche.",
  fact:"L'Intihuatana servait d'instrument de mesure : son ombre permettait de suivre les équinoxes et solstices avec une précision remarquable. Bien avant les Incas, le peuple Nazca traçait dans le désert du sud du Pérou d'immenses géoglyphes — dont plusieurs seraient alignés sur des levers d'astres ou les solstices, selon l'archéologue Maria Reiche. Les Incas, héritiers de ce savoir andin du ciel, auraient prolongé cette tradition d'observation jusqu'ici, au sommet du Machu Picchu.",
- puzzleIntro:"L'ombre du pilier tourne selon un rythme précis : c'est un chiffre de Vigenère. Soustrais chaque lettre-clé, répétée en boucle selon la longueur du mot, à la lettre chiffrée correspondante.",
+ puzzleIntro:"L'ombre du pilier tourne selon un rythme précis : c'est un chiffre de Vigenère. La clé est le nom du soleil dans la langue des Incas, que don Rumi vient de prononcer. Soustrais chaque lettre de cette clé, répétée en boucle selon la longueur du mot, à la lettre chiffrée correspondante.",
  cipher:"VNSKI",
- hint:"Le mot-clé est celui du dieu-soleil que don Rumi vient de nommer.",
+ hint:"Le mot-clé est INTI — le nom du soleil en quechua, la langue des Incas, que don Rumi vient de prononcer.",
  answer:"NAZCA"},
 {title:"La Chambre des Trois Fenêtres",sub:"Le Mythe des Origines",
  story:"Dans l'enceinte principale, un mur de pierre parfaitement polie s'ouvre sur trois fenêtres trapézoïdales identiques, chacune encadrant un pan différent de la vallée en contrebas — comme trois tableaux peints par le même ciel. Don Rumi s'assoit sur le rebord de pierre froide et vous raconte, à voix basse, la légende des quatre frères Ayar et de leurs sœurs, sortis d'une caverne voisine pour fonder l'empire. « Pachacútec aurait fait sculpter cette salle en hommage à ses propres origines », dit-il. « Tout commence toujours par une sortie de l'ombre. » Sur le rebord de la fenêtre centrale, sept lettres ont été gravées avec soin — mais quelqu'un, un jour, en a volontairement brouillé l'ordre.",
@@ -669,16 +695,16 @@ fr:[
 {title:"Le Quipu du Gardien",sub:"Les Cordes qui Parlent",
  story:"À l'abri d'une niche que le vent n'atteint jamais, un quipu intact pend encore de son support, presque irréel après tant de siècles : des dizaines de cordelettes de laine teinte, chacune porteuse de nœuds savamment espacés. Le gardien du site — un vieil homme aux mains couvertes de callosités, descendant, dit-on, d'un quipucamayoc — s'approche sans bruit et referme délicatement les doigts sur les cordes, comme on protège un objet vivant. « Ce ne sont pas des décorations », dit-il en quechua, que don Rumi traduit à voix basse. « Ce sont des nombres. Une mémoire qu'aucune écriture n'a jamais pu remplacer. » Chaque groupe de nœuds correspond à un chiffre — et ces chiffres, mis bout à bout, forment un mot que ni les conquistadors ni le temps n'ont réussi à défaire.",
  fact:"Les Incas n'avaient pas d'écriture alphabétique, mais leur système de quipu encodait des nombres en base décimale grâce à la position et au type des nœuds sur chaque corde — un outil comptable et mémoriel longtemps sous-estimé par les historiens occidentaux.",
- puzzleIntro:"Chaque groupe de nœuds correspond à un nombre. Convertissez chaque nombre en lettre selon sa position dans l'alphabet (A=1, B=2 ... Z=26).",
- cipher:"13-5-13-15-9-18-5",
- hint:"13e lettre, puis 5e, puis 13e... Un mot de 7 lettres qui parle de ce que ce quipu a préservé à travers les siècles.",
+ puzzleIntro:"Sur ce quipu, chaque nombre n'est pas noué d'un seul bloc : il est réparti sur deux groupes de nœuds superposés — le groupe du haut compte les dizaines, celui du bas les unités. Calculez (dizaines × 10) + unités pour retrouver chaque nombre, puis convertissez-le en lettre selon sa position dans l'alphabet (A=1, B=2 ... Z=26).",
+ cipher:"1|3 — 0|5 — 1|3 — 1|5 — 0|9 — 1|8 — 0|5",
+ hint:"Premier groupe : 1 nœud en haut (dizaine) et 3 en bas (unité) → 1×10+3 = 13 → M. Faites de même pour les six groupes suivants ; le mot de 7 lettres parle de ce que ce quipu a préservé à travers les siècles.",
  answer:"MEMOIRE"},
 {title:"Le Temple du Condor",sub:"Les Trois Mondes",
- story:"La roche a été taillée, il y a des siècles, pour former deux ailes immenses déployées au ras du sol — un condor pétrifié, prêt à s'envoler vers un ciel qu'il ne quittera jamais vraiment. Sous vos pieds, une cavité étroite s'enfonce dans l'obscurité complète. Don Rumi recule d'un pas, presque malgré lui. « Le condor porte les âmes vers le monde d'en haut », murmure-t-il. « Sous nos pieds, c'est le monde d'en bas, celui des ancêtres. Et nous, ici, entre les deux. » Une pierre, à l'entrée de la cavité, porte un message codé selon le nom même de cette terre andine tout entière.",
+ story:"La roche a été taillée, il y a des siècles, pour former deux ailes immenses déployées au ras du sol — un condor pétrifié, prêt à s'envoler vers un ciel qu'il ne quittera jamais vraiment. Sous vos pieds, une cavité étroite s'enfonce dans l'obscurité complète. Don Rumi recule d'un pas, presque malgré lui. « Kuntur — le condor — porte les âmes vers le monde d'en haut », murmure-t-il. « Sous nos pieds, c'est le monde d'en bas, celui des ancêtres. Et nous, ici, entre les deux. » Une pierre, à l'entrée de la cavité, porte un message codé selon le nom quechua de cet oiseau sacré lui-même.",
  fact:"Le condor incarne Hanan Pacha, le monde d'en haut ; le puma (dont la silhouette de Cusco épouse la forme) incarne Kay Pacha, le monde terrestre ; le serpent incarne Uku Pacha, le monde souterrain des ancêtres. Ces trois animaux structurent toute la pensée sacrée inca.",
- puzzleIntro:"Le message a été codé en suivant le nom quechua de l'oiseau sacré lui-même, lettre après lettre.",
+ puzzleIntro:"C'est un chiffre de Vigenère. La clé est le nom quechua de l'oiseau sacré que don Rumi vient de prononcer. Soustrais chaque lettre de cette clé, répétée en boucle selon la longueur du mot, à la lettre chiffrée correspondante.",
  cipher:"MIFFIJ",
- hint:"C'est un chiffre de Vigenère dont la clé est KUNTUR — « condor » en quechua, le gardien du monde d'en haut.",
+ hint:"K(11)-U(21)-N(14)-T(20)-U(21)-R(18) : soustrais ces valeurs, lettre par lettre, à M-I-F-F-I-J pour retrouver le mot de 6 lettres — le domaine que ces trois mondes, réunis, composent.",
  answer:"COSMOS"},
 {title:"La Cité de Pachacútec",sub:"La Chronologie des Souverains",
  story:"Dans une petite salle qui devait servir de conseil, six pierres plates sont disposées en cercle, chacune gravée du nom d'un souverain inca. Les siècles et un éboulement ancien les ont mélangées, dans un désordre qui semble presque délibéré. Don Rumi s'accroupit et les observe longuement avant de parler. « Pachacútec a bâti cette cité. Túpac Amaru l'a vue tomber, loin d'ici, à Vilcabamba. Entre les deux : quatre règnes, une guerre civile, une conquête. » Il pose un doigt sur chaque pierre, l'une après l'autre, sans les toucher tout à fait. « Remettez-les dans l'ordre du temps, et elles vous diront quelque chose que ni vous ni moi n'avons encore entendu. »",
@@ -698,9 +724,10 @@ fr:[
 {title:"La Route Royale",sub:"Qhapaq Ñan — Le Relais des Chasquis",
  story:"Depuis le rebord ouest du site, un réseau de sentiers pavés s'étend à perte de vue, plongeant vers la vallée puis remontant vers des sommets que la brume avale un à un. Don Rumi désigne une petite construction de pierre, à peine plus grande qu'une hutte, à quelques centaines de mètres en contrebas. « Un relais de chasquis », dit-il. « Des coureurs d'élite, prêts à bondir jour et nuit pour porter un message plus loin que n'importe quel cheval espagnol n'aurait pu le faire. » Sur le mur intérieur du relais, à moitié effacée par la pluie, une série de points et de traits a été peinte à l'ocre rouge.",
  fact:"Plus de 30 000 kilomètres de routes reliaient l'empire inca. Grâce au relais des chasquis — et au pututu, la corne de conque rituelle qui transmettait l'alerte d'une tour à l'autre bien avant l'arrivée du coureur — une nouvelle pouvait parcourir près de 2 000 km entre Quito et Cusco en environ une semaine, une prouesse pour l'époque.",
- puzzleIntro:"Ces points et traits ne sont pas de l'ocre décorative : c'est le code des chasquis, gravé d'après les souffles de pututu — la corne de conque — qu'ils échangeaient de tour en tour : un souffle bref, un souffle long.",
+ puzzleIntro:"Ces points et traits ne sont pas de l'ocre décorative : c'est l'alphabet Morse international, que les chasquis auraient transmis par soufflés de pututu — point = souffle bref, trait = souffle long. Chaque groupe, séparé par un espace du suivant, code une lettre. Aidez-vous de la table ci-dessous pour décoder le message groupe par groupe.",
+ refTable:"<div class='ref-cell'><b>A</b> .-</div><div class='ref-cell'><b>B</b> -...</div><div class='ref-cell'><b>C</b> -.-.</div><div class='ref-cell'><b>D</b> -..</div><div class='ref-cell'><b>E</b> .</div><div class='ref-cell'><b>F</b> ..-.</div><div class='ref-cell'><b>G</b> --.</div><div class='ref-cell'><b>H</b> ....</div><div class='ref-cell'><b>I</b> ..</div><div class='ref-cell'><b>J</b> .---</div><div class='ref-cell'><b>K</b> -.-</div><div class='ref-cell'><b>L</b> .-..</div><div class='ref-cell'><b>M</b> --</div><div class='ref-cell'><b>N</b> -.</div><div class='ref-cell'><b>O</b> ---</div><div class='ref-cell'><b>P</b> .--.</div><div class='ref-cell'><b>Q</b> --.-</div><div class='ref-cell'><b>R</b> .-.</div><div class='ref-cell'><b>S</b> ...</div><div class='ref-cell'><b>T</b> -</div><div class='ref-cell'><b>U</b> ..-</div><div class='ref-cell'><b>V</b> ...-</div><div class='ref-cell'><b>W</b> .--</div><div class='ref-cell'><b>X</b> -..-</div><div class='ref-cell'><b>Y</b> -.--</div><div class='ref-cell'><b>Z</b> --..</div>",
  cipher:"-- . ... ... .- --. .",
- hint:"Point = souffle bref de pututu, trait = souffle long. Traduis chaque lettre comme le ferait un coureur relayant un message par le son de sa corne.",
+ hint:"Premier groupe, -- (deux traits) : cherchez-le dans la table — c'est un M. Faites de même pour les six groupes restants et retrouvez le mot de 7 lettres.",
  answer:"MESSAGE"},
 {title:"Le Khipu de l'Amauta",sub:"Cinq Fils, Cinq Couleurs",
  story:"Presque au sommet, alors que le sentier se resserre entre deux blocs de granit, don Rumi s'arrête net devant une fissure à peine visible dans la roche. Il y glisse la main avec une précision qui trahit qu'il savait exactement où chercher — et en retire un petit khipu, bien plus modeste que celui du gardien : cinq cordelettes seulement, teintes de cinq couleurs distinctes, chacune nouée avec un soin presque obsessionnel. « Celui-là n'a jamais servi à compter des sacs de maïs », murmure-t-il en le retournant entre ses doigts. « Un amauta le portait caché sous ses vêtements, à même la peau. Pas pour l'empire. Pour lui-même — ou pour quelqu'un qu'il n'a jamais nommé. » Les nœuds, sur chaque fil, ne suivent aucune logique comptable évidente ; ils semblent attendre une clé que seul un sage aurait connue.",
@@ -724,7 +751,8 @@ es:[
  puzzleIntro:"El mensaje fue tejido sobre tres hilos, a la manera de un tocapu andino — un motivo geométrico tejido en zigzag en el telar de cintura, y luego leído hilo por hilo.",
  cipher:"TAERZSRA",
  hint:"Es el principio del tejido andino (tocapu): reescribe el texto en zigzag sobre 3 hilos/líneas para recuperar el orden original, como se siguen los hilos de un telar.",
- answer:"TERRAZAS"},
+ answer:"TERRAZAS",
+ isThreadGame:true},
 {title:"El Torreón",sub:"Templo del Sol",
  story:"Mientras el sol asciende, la niebla se retira de la ciudad como una sábana que alguien retira despacio. Llegáis a una torre semicircular que abraza la roca natural con una precisión que os deja sin palabras: ni un grano de mortero, y sin embargo ni el menor resquicio. Don Rumi os hace señas de callar y mirar por la ventana trapezoidal: un rayo de luz roza el muro interior, preciso como un hilo tenso. “El Torreón solo habla una mañana al año”, susurra. “Tenéis suerte — o no.” Sobre la piedra iluminada, una inscripción parece el reflejo, invertido, de una palabra que aún no lográis leer.",
  fact:"El Torreón está alineado para captar la salida del sol del solsticio de junio a través de su ventana — un observatorio astronómico dedicado a Inti, el dios solar, construido con bloques de granito ajustados sin herramienta de hierro alguna.",
@@ -735,9 +763,9 @@ es:[
 {title:"El Intihuatana",sub:"El Pilar que Ata al Sol",
  story:"El camino sigue subiendo, hasta el punto más alto del sitio, donde un bloque de granito tallado se alza solitario, tan solo como un anciano que espera. Don Rumi se agacha ante él con un respeto casi religioso. “Los sacerdotes venían aquí a atar el sol — Inti —, en el solsticio, para impedir que se alejara demasiado”, dice, siguiendo con la mirada la breve sombra que el pilar proyecta sobre la piedra. “Un reloj vivo. El único de todo el Perú que los españoles nunca encontraron para destruirlo.” Alrededor de la base, una serie de letras parece girar con las horas, como si el propio tiempo hubiera sido grabado en la roca.",
  fact:"El Intihuatana servía como instrumento de medición: su sombra permitía seguir equinoccios y solsticios con notable precisión. Casi todos los demás Intihuatana del Perú fueron destruidos por los españoles, que veían en ellos un objeto de idolatría — este sobrevivió porque Machu Picchu nunca fue hallado.",
- puzzleIntro:"La sombra del pilar gira con un ritmo preciso: es un cifrado Vigenère. Resta cada letra de la clave, repetida en bucle según la longitud de la palabra, a la letra cifrada correspondiente.",
+ puzzleIntro:"La sombra del pilar gira con un ritmo preciso: es un cifrado Vigenère. La clave es el nombre del sol en la lengua de los Incas, que don Rumi acaba de pronunciar. Resta cada letra de esa clave, repetida en bucle según la longitud de la palabra, a la letra cifrada correspondiente.",
  cipher:"OAHUWA",
- hint:"La palabra clave es la del dios-sol que don Rumi acaba de nombrar.",
+ hint:"La palabra clave es INTI — el nombre del sol en quechua, la lengua de los Incas, que don Rumi acaba de pronunciar.",
  answer:"GNOMON"},
 {title:"La Cámara de las Tres Ventanas",sub:"El Mito de los Orígenes",
  story:"En el recinto principal, un muro de piedra perfectamente pulida se abre en tres ventanas trapezoidales idénticas, cada una enmarcando un fragmento distinto del valle — como tres cuadros pintados por el mismo cielo. Don Rumi se sienta en el borde de piedra fría y os cuenta, en voz baja, la leyenda de los cuatro hermanos Ayar y sus hermanas, salidos de una cueva cercana para fundar el imperio. “Se dice que el propio Pachacútec mandó esculpir esta sala en honor a sus orígenes”, dice. “Todo empieza siempre saliendo de la sombra.” En el borde de la ventana central, seis letras fueron grabadas con cuidado — pero alguien, un día, alteró deliberadamente su orden.",
@@ -749,16 +777,16 @@ es:[
 {title:"El Quipu del Guardián",sub:"Las Cuerdas que Hablan",
  story:"A resguardo en un nicho que el viento jamás alcanza, un quipu intacto aún cuelga de su soporte, casi irreal tras tantos siglos: decenas de cordeles de lana teñida, cada uno con nudos sabiamente espaciados. El guardián del sitio —un anciano de manos encallecidas, descendiente, dicen, de un quipucamayoc— se acerca sin ruido y cierra con delicadeza los dedos sobre las cuerdas, como quien protege algo vivo. “No son adornos”, dice en quechua, que don Rumi traduce en voz baja. “Son números. Una memoria que ninguna escritura pudo jamás reemplazar.” Cada grupo de nudos corresponde a una cifra — y esas cifras, unidas, forman una palabra que ni los conquistadores ni el tiempo lograron deshacer.",
  fact:"Los incas no tenían escritura alfabética, pero su sistema de quipu codificaba números en base decimal gracias a la posición y el tipo de nudo en cada cuerda — una herramienta contable y memorística largamente subestimada por los historiadores occidentales.",
- puzzleIntro:"Cada grupo de nudos corresponde a un número. Convierte cada número en una letra según su posición en el alfabeto (A=1, B=2 ... Z=26).",
- cipher:"13-5-13-15-18-9-1",
- hint:"13ª letra, luego 5ª, luego 13ª... Una palabra de 7 letras que habla de lo que este quipu ha preservado a través de los siglos.",
+ puzzleIntro:"En este quipu, cada número no está anudado de una sola vez: se reparte en dos grupos de nudos superpuestos — el grupo de arriba cuenta las decenas, el de abajo las unidades. Calcula (decenas × 10) + unidades para obtener cada número, y luego conviértelo en una letra según su posición en el alfabeto (A=1, B=2 ... Z=26).",
+ cipher:"1|3 — 0|5 — 1|3 — 1|5 — 1|8 — 0|9 — 0|1",
+ hint:"Primer grupo: 1 nudo arriba (decena) y 3 abajo (unidad) → 1×10+3 = 13 → M. Haz lo mismo con los seis grupos siguientes; la palabra de 7 letras habla de lo que este quipu ha preservado a través de los siglos.",
  answer:"MEMORIA"},
 {title:"El Templo del Cóndor",sub:"Los Tres Mundos",
- story:"La roca fue tallada, hace siglos, para formar dos alas inmensas desplegadas a ras de suelo — un cóndor petrificado, listo para alzar el vuelo hacia un cielo que nunca abandonará del todo. Bajo vuestros pies, una cavidad estrecha se hunde en la oscuridad total. Don Rumi retrocede un paso, casi a su pesar. “El cóndor lleva las almas al mundo de arriba”, murmura. “Bajo nuestros pies está el mundo de abajo, el de los antepasados. Y nosotros, aquí, entre ambos.” Una piedra, junto a la entrada de la cavidad, lleva un mensaje codificado según el nombre mismo de esta tierra andina entera.",
+ story:"La roca fue tallada, hace siglos, para formar dos alas inmensas desplegadas a ras de suelo — un cóndor petrificado, listo para alzar el vuelo hacia un cielo que nunca abandonará del todo. Bajo vuestros pies, una cavidad estrecha se hunde en la oscuridad total. Don Rumi retrocede un paso, casi a su pesar. “Kuntur —el cóndor— lleva las almas al mundo de arriba”, murmura. “Bajo nuestros pies está el mundo de abajo, el de los antepasados. Y nosotros, aquí, entre ambos.” Una piedra, junto a la entrada de la cavidad, lleva un mensaje codificado según el nombre quechua de esta ave sagrada misma.",
  fact:"El cóndor encarna Hanan Pacha, el mundo de arriba; el puma (cuya silueta adopta la propia Cusco) encarna Kay Pacha, el mundo terrenal; la serpiente encarna Uku Pacha, el mundo subterráneo de los ancestros. Estos tres animales estructuran todo el pensamiento sagrado inca.",
- puzzleIntro:"El mensaje se codificó siguiendo el nombre quechua del ave sagrada misma, letra tras letra.",
+ puzzleIntro:"Es un cifrado Vigenère. La clave es el nombre quechua del ave sagrada que don Rumi acaba de pronunciar. Resta cada letra de esa clave, repetida en bucle según la longitud de la palabra, a la letra cifrada correspondiente.",
  cipher:"MIFFIJ",
- hint:"Es un cifrado Vigenère cuya clave es KUNTUR — «cóndor» en quechua, guardián del mundo de arriba.",
+ hint:"K(11)-U(21)-N(14)-T(20)-U(21)-R(18): resta estos valores, letra por letra, a M-I-F-F-I-J para obtener la palabra de 6 letras — el ámbito que estos tres mundos, reunidos, componen.",
  answer:"COSMOS"},
 {title:"La Ciudad de Pachacútec",sub:"La Cronología de los Soberanos",
  story:"En una pequeña sala que debió de servir de consejo, seis piedras planas están dispuestas en círculo, cada una grabada con el nombre de un soberano inca. Los siglos y un antiguo derrumbe las han mezclado, en un desorden que parece casi deliberado. Don Rumi se agacha y las observa largamente antes de hablar. “Pachacútec construyó esta ciudad. Túpac Amaru la vio caer, lejos de aquí, en Vilcabamba. Entre ambos: cuatro reinados, una guerra civil, una conquista.” Posa un dedo sobre cada piedra, una tras otra, sin llegar a tocarlas. “Devolvedlas al orden del tiempo, y os dirán algo que ni vos ni yo hemos escuchado todavía.”",
@@ -778,9 +806,10 @@ es:[
 {title:"La Ruta Real",sub:"Qhapaq Ñan — El Relevo de los Chasquis",
  story:"Desde el borde oeste del sitio, una red de senderos empedrados se extiende hasta perderse de vista, bajando hacia el valle y subiendo de nuevo hacia cumbres que la niebla engulle una a una. Don Rumi señala una pequeña construcción de piedra, apenas mayor que una choza, unos cientos de metros más abajo. “Un relevo de chasquis”, dice. “Corredores de élite, listos para partir día y noche para llevar un mensaje más lejos de lo que cualquier caballo español habría podido llevarlo.” En el muro interior del relevo, medio borrada por la lluvia, una serie de puntos y rayas fue pintada con ocre rojo.",
  fact:"Más de 30.000 kilómetros de caminos conectaban el imperio inca. Gracias al relevo de los chasquis —y al pututu, la caracola ritual que transmitía la alerta de una torre a otra mucho antes de que llegara el corredor—, una noticia podía recorrer cerca de 2.000 km entre Quito y Cusco en apenas una semana, una proeza para la época.",
- puzzleIntro:"Esos puntos y rayas no son ocre decorativo: es el código de los chasquis, grabado según los soplos de pututu — la caracola ceremonial — que se intercambiaban de posta en posta: un soplo breve, un soplo largo.",
+ puzzleIntro:"Esos puntos y rayas no son ocre decorativo: es el alfabeto Morse internacional, que los chasquis habrían transmitido con soplos de pututu — punto = soplo breve, raya = soplo largo. Cada grupo, separado por un espacio del siguiente, codifica una letra. Usa la tabla de abajo para decodificar el mensaje grupo por grupo.",
+ refTable:"<div class='ref-cell'><b>A</b> .-</div><div class='ref-cell'><b>B</b> -...</div><div class='ref-cell'><b>C</b> -.-.</div><div class='ref-cell'><b>D</b> -..</div><div class='ref-cell'><b>E</b> .</div><div class='ref-cell'><b>F</b> ..-.</div><div class='ref-cell'><b>G</b> --.</div><div class='ref-cell'><b>H</b> ....</div><div class='ref-cell'><b>I</b> ..</div><div class='ref-cell'><b>J</b> .---</div><div class='ref-cell'><b>K</b> -.-</div><div class='ref-cell'><b>L</b> .-..</div><div class='ref-cell'><b>M</b> --</div><div class='ref-cell'><b>N</b> -.</div><div class='ref-cell'><b>O</b> ---</div><div class='ref-cell'><b>P</b> .--.</div><div class='ref-cell'><b>Q</b> --.-</div><div class='ref-cell'><b>R</b> .-.</div><div class='ref-cell'><b>S</b> ...</div><div class='ref-cell'><b>T</b> -</div><div class='ref-cell'><b>U</b> ..-</div><div class='ref-cell'><b>V</b> ...-</div><div class='ref-cell'><b>W</b> .--</div><div class='ref-cell'><b>X</b> -..-</div><div class='ref-cell'><b>Y</b> -.--</div><div class='ref-cell'><b>Z</b> --..</div>",
  cipher:"-- . -. ... .- .--- .",
- hint:"Punto = soplo breve de pututu, raya = soplo largo. Traduce cada letra como lo haría un corredor relevando un mensaje con el sonido de su caracola.",
+ hint:"Primer grupo, -- (dos rayas): búscalo en la tabla — es una M. Haz lo mismo con los seis grupos restantes y obtén la palabra de 7 letras.",
  answer:"MENSAJE"},
 {title:"El Khipu del Amauta",sub:"Cinco Hilos, Cinco Colores",
  story:"Casi en la cima, cuando el sendero se estrecha entre dos bloques de granito, don Rumi se detiene en seco ante una grieta apenas visible en la roca. Introduce la mano con una precisión que delata que sabía exactamente dónde buscar — y saca un pequeño khipu, mucho más modesto que el del guardián: solo cinco cordeles, teñidos de cinco colores distintos, cada uno anudado con un cuidado casi obsesivo. “Este nunca sirvió para contar sacos de maíz”, murmura, dándole vueltas entre los dedos. “Un amauta lo llevaba oculto bajo la ropa, pegado a la piel. No para el imperio. Para sí mismo — o para alguien que nunca nombró.” Los nudos, en cada hilo, no siguen ninguna lógica contable evidente; parecen esperar una clave que solo un sabio habría conocido.",
@@ -804,7 +833,8 @@ en:[
  puzzleIntro:"The message was woven across three threads, in the manner of an Andean tocapu — a geometric pattern woven zigzag on the backstrap loom, then read thread by thread.",
  cipher:"TAERCSRE",
  hint:"This is the principle of Andean weaving (tocapu): rewrite the text in a zigzag across 3 threads/lines to recover the original letter order, as you would follow the threads of a loom.",
- answer:"TERRACES"},
+ answer:"TERRACES",
+ isThreadGame:true},
 {title:"The Torreón",sub:"Temple of the Sun",
  story:"As the sun climbs, mist withdraws from the city like a sheet slowly pulled back. You reach a semicircular tower hugging the natural rock with a precision that leaves you speechless: not a grain of mortar, yet not the slightest gap. Don Rumi motions for silence and points to the trapezoidal window: a beam of light grazes the inner wall, precise as a taut thread. “The Torreón only speaks one morning a year,” he whispers. “You're lucky — or not.” On the lit stone, an inscription seems to be the reversed reflection of a word you still cannot read.",
  fact:"The Torreón is aligned to catch the June solstice sunrise through its window — an astronomical observatory dedicated to Inti, the sun god, built from granite blocks fitted without a single iron tool.",
@@ -815,9 +845,9 @@ en:[
 {title:"The Intihuatana",sub:"The Pillar That Ties the Sun",
  story:"The path climbs further still, to the highest point of the site, where a carved granite block stands alone, as solitary as an old man waiting. Don Rumi crouches before it with something close to reverence. “The priests came here to tie the sun — Inti —, at the solstice, to keep it from drifting too far from us,” he says, following with his eyes the short shadow the pillar casts on the stone. “A living dial. The only one in all of Peru the Spanish never found to destroy.” Around the base, a string of letters seems to turn with the hours, as if time itself had been carved into the rock.",
  fact:"The Intihuatana served as a measuring instrument: its shadow tracked equinoxes and solstices with remarkable precision. Almost every other Intihuatana in Peru was destroyed by the Spanish, who saw them as objects of idolatry — this one survived because Machu Picchu was never found.",
- puzzleIntro:"The pillar's shadow turns to a precise rhythm: it's a Vigenère cipher. Subtract each key letter, repeated in a loop matching the word's length, from its corresponding ciphered letter.",
+ puzzleIntro:"The pillar's shadow turns to a precise rhythm: it's a Vigenère cipher. The key is the name of the sun in the Incas' language, which don Rumi just spoke aloud. Subtract each letter of that key, repeated in a loop matching the word's length, from its corresponding ciphered letter.",
  cipher:"OAHUWA",
- hint:"The keyword is the sun god's name don Rumi just spoke aloud.",
+ hint:"The keyword is INTI — the name of the sun in Quechua, the Inca language, which don Rumi just spoke aloud.",
  answer:"GNOMON"},
 {title:"The Room of the Three Windows",sub:"The Origin Myth",
  story:"In the main enclosure, a wall of perfectly polished stone opens onto three identical trapezoidal windows, each framing a different slice of the valley below — like three paintings by the same sky. Don Rumi sits on the cold stone sill and tells you, in a low voice, the legend of the four Ayar brothers and their sisters, who emerged from a nearby cave to found the empire. “Pachacútec himself is said to have had this room carved in honor of his own origins,” he says. “Everything always begins by stepping out of shadow.” On the sill of the central window, six letters were carefully carved — but someone, one day, deliberately scrambled their order.",
@@ -829,16 +859,16 @@ en:[
 {title:"The Guardian's Quipu",sub:"The Cords That Speak",
  story:"Sheltered in a niche the wind never reaches, an intact quipu still hangs from its frame, almost unreal after so many centuries: dozens of dyed wool cords, each carrying carefully spaced knots. The site's guardian — an old man with calloused hands, descended, they say, from a quipucamayoc — approaches silently and closes his fingers gently around the cords, as one protects something alive. “These aren't decoration,” he says in Quechua, which don Rumi translates under his breath. “These are numbers. A memory no writing system could ever replace.” Each group of knots corresponds to a figure — and those figures, strung together, form a word that neither the conquistadors nor time ever managed to undo.",
  fact:"The Incas had no alphabetic writing, but their quipu system encoded numbers in base ten through the position and type of knot on each cord — an accounting and memory tool long underestimated by Western historians.",
- puzzleIntro:"Each group of knots corresponds to a number. Convert each number into a letter by its position in the alphabet (A=1, B=2 ... Z=26).",
- cipher:"13-5-13-15-18-25",
- hint:"13th letter, then 5th, then 13th... A 6-letter word about what this quipu has preserved across the centuries.",
+ puzzleIntro:"On this quipu, each number isn't tied in a single cluster: it's split across two stacked knot groups — the upper group counts the tens, the lower group the units. Work out (tens × 10) + units to get each number, then convert it into a letter by its position in the alphabet (A=1, B=2 ... Z=26).",
+ cipher:"1|3 — 0|5 — 1|3 — 1|5 — 1|8 — 2|5",
+ hint:"First group: 1 knot up top (tens) and 3 below (units) → 1×10+3 = 13 → M. Do the same for the remaining five groups; the 6-letter word is about what this quipu has preserved across the centuries.",
  answer:"MEMORY"},
 {title:"The Temple of the Condor",sub:"The Three Worlds",
- story:"The rock was carved, centuries ago, into two immense wings spread low to the ground — a petrified condor, ready to take flight into a sky it will never truly leave. Beneath your feet, a narrow cavity sinks into total darkness. Don Rumi steps back, almost against his will. “The condor carries souls to the world above,” he murmurs. “Beneath our feet lies the world below, the ancestors' world. And us, here, between the two.” A stone by the cavity's entrance carries a message coded using the very name of this entire Andean land.",
+ story:"The rock was carved, centuries ago, into two immense wings spread low to the ground — a petrified condor, ready to take flight into a sky it will never truly leave. Beneath your feet, a narrow cavity sinks into total darkness. Don Rumi steps back, almost against his will. “Kuntur — the condor — carries souls to the world above,” he murmurs. “Beneath our feet lies the world below, the ancestors' world. And us, here, between the two.” A stone by the cavity's entrance carries a message coded using the Quechua name of this very sacred bird.",
  fact:"The condor embodies Hanan Pacha, the world above; the puma (whose shape Cusco itself is said to follow) embodies Kay Pacha, the earthly world; the serpent embodies Uku Pacha, the underworld of the ancestors. These three animals structure all Inca sacred thought.",
- puzzleIntro:"The message was coded using the Quechua name of the sacred bird itself, letter after letter.",
+ puzzleIntro:"It's a Vigenère cipher. The key is the Quechua name of the sacred bird don Rumi just spoke aloud. Subtract each letter of that key, repeated in a loop matching the word's length, from its corresponding ciphered letter.",
  cipher:"MIFFIJ",
- hint:"This is a Vigenère cipher whose key is KUNTUR — Quechua for \"condor\", guardian of the world above.",
+ hint:"K(11)-U(21)-N(14)-T(20)-U(21)-R(18): subtract these values, letter by letter, from M-I-F-F-I-J to get the 6-letter word — the realm these three worlds, together, form.",
  answer:"COSMOS"},
 {title:"The City of Pachacútec",sub:"The Chronology of the Rulers",
  story:"In a small chamber that must once have served as a council room, six flat stones are arranged in a circle, each carved with the name of an Inca ruler. Centuries and an old rockfall have scattered them, in a disorder that seems almost deliberate. Don Rumi crouches and studies them for a long moment before speaking. “Pachacútec built this city. Túpac Amaru saw it fall, far from here, at Vilcabamba. Between them: four reigns, a civil war, a conquest.” He touches a finger to each stone, one after another, without quite touching them. “Put them back in the order of time, and they'll tell you something neither of us has heard yet.”",
@@ -858,9 +888,10 @@ en:[
 {title:"The Royal Road",sub:"Qhapaq Ñan — The Chasqui Relay",
  story:"From the site's western edge, a network of paved paths stretches out of sight, dropping toward the valley and climbing again toward peaks the mist swallows one by one. Don Rumi points to a small stone structure, barely bigger than a hut, a few hundred meters below. “A chasqui relay station,” he says. “Elite runners, ready to sprint day and night to carry a message farther than any Spanish horse ever could.” On the relay's inner wall, half worn away by rain, a series of dots and dashes was painted in red ochre.",
  fact:"More than 30,000 kilometers of roads connected the Inca empire. Through the chasqui relay — and the pututu, the ritual conch-shell horn that carried the alert from tower to tower long before the runner himself arrived — news could travel nearly 2,000 km between Quito and Cusco in about a week, a remarkable feat for the era.",
- puzzleIntro:"Those dots and dashes aren't decorative ochre: it's the chasquis' code, recorded from the pututu blasts — the conch-shell horn — they exchanged from tower to tower: one short blast, one long blast.",
+ puzzleIntro:"Those dots and dashes aren't decorative ochre: it's the International Morse alphabet, which the chasquis would have relayed through pututu blasts — dot = short blast, dash = long blast. Each group, separated by a space from the next, encodes one letter. Use the table below to decode the message group by group.",
+ refTable:"<div class='ref-cell'><b>A</b> .-</div><div class='ref-cell'><b>B</b> -...</div><div class='ref-cell'><b>C</b> -.-.</div><div class='ref-cell'><b>D</b> -..</div><div class='ref-cell'><b>E</b> .</div><div class='ref-cell'><b>F</b> ..-.</div><div class='ref-cell'><b>G</b> --.</div><div class='ref-cell'><b>H</b> ....</div><div class='ref-cell'><b>I</b> ..</div><div class='ref-cell'><b>J</b> .---</div><div class='ref-cell'><b>K</b> -.-</div><div class='ref-cell'><b>L</b> .-..</div><div class='ref-cell'><b>M</b> --</div><div class='ref-cell'><b>N</b> -.</div><div class='ref-cell'><b>O</b> ---</div><div class='ref-cell'><b>P</b> .--.</div><div class='ref-cell'><b>Q</b> --.-</div><div class='ref-cell'><b>R</b> .-.</div><div class='ref-cell'><b>S</b> ...</div><div class='ref-cell'><b>T</b> -</div><div class='ref-cell'><b>U</b> ..-</div><div class='ref-cell'><b>V</b> ...-</div><div class='ref-cell'><b>W</b> .--</div><div class='ref-cell'><b>X</b> -..-</div><div class='ref-cell'><b>Y</b> -.--</div><div class='ref-cell'><b>Z</b> --..</div>",
  cipher:"-- . ... ... .- --. .",
- hint:"Dot = short pututu blast, dash = long blast. Translate each letter as a runner would, relaying a message through the sound of his horn.",
+ hint:"First group, -- (two dashes): look it up in the table — it's an M. Do the same for the remaining six groups to get the 7-letter word.",
  answer:"MESSAGE"},
 {title:"The Amauta's Khipu",sub:"Five Threads, Five Colors",
  story:"Almost at the summit, where the path narrows between two granite blocks, don Rumi stops dead in front of a crack barely visible in the rock. He slides his hand in with a precision that betrays he knew exactly where to look — and pulls out a small khipu, far more modest than the guardian's: only five cords, each dyed a different color, each knotted with almost obsessive care. “This one never counted sacks of maize,” he murmurs, turning it over in his fingers. “An amauta carried it hidden under his clothes, against his skin. Not for the empire. For himself — or for someone he never named.” The knots on each cord follow no obvious accounting logic; they seem to be waiting for a key only a sage would have known.",
@@ -1191,6 +1222,218 @@ function toggleHint(n){
   h.classList.toggle('show');
 }
 
+/* ── Thread Game ── */
+const threadGameState = {};
+
+/* Retrouve, pour un mot de longueur n tissé en zigzag sur `rails` fils
+   (puis lu fil par fil), l'index dans le texte chiffré de chaque lettre
+   du mot original. positions[i] = index dans `cipher` de la lettre i
+   du mot en clair. */
+function railFenceDecodePositions(n, rails){
+  const cycle = 2 * (rails - 1);
+  const rows = Array.from({length: rails}, () => []);
+  for(let i = 0; i < n; i++){
+    const c = i % cycle;
+    const r = c < rails ? c : cycle - c;
+    rows[r].push(i);
+  }
+  const pos = new Array(n);
+  let offset = 0;
+  rows.forEach(rowList => {
+    rowList.forEach((origIdx, k) => {
+      pos[origIdx] = offset + k;
+    });
+    offset += rowList.length;
+  });
+  return pos;
+}
+
+function initThreadGamePuzzle(stageNum, cipher, answer){
+  const puzzleArea = document.getElementById('puzzle-area-'+stageNum);
+  if(!puzzleArea) return;
+  
+  const n = cipher.length;
+
+  threadGameState[stageNum] = {
+    answer: answer,
+    cipher: cipher,
+    total: n,
+    answerSlots: new Array(n).fill(null),
+    clickedCount: 0,
+    selectedThread: null
+  };
+  
+  const solvedPositions = railFenceDecodePositions(n, 3);
+  const threads = [
+    { color: "#D85A30", name: "red", positions: solvedPositions },
+    { color: "#BA7517", name: "gold", positions: solvedPositions.map((_, i) => solvedPositions[(i + 1) % n]) },
+    { color: "#378ADD", name: "blue", positions: solvedPositions.slice().reverse() }
+  ];
+  
+  const letterPositions = [];
+  threads.forEach((thread, threadIdx) => {
+    const positions = thread.positions;
+    positions.forEach((pos, idx) => {
+      letterPositions.push({
+        letter: cipher[pos],
+        threadIdx,
+        threadName: thread.name,
+        threadColor: thread.color,
+        originalPos: pos,
+        clickIdx: idx
+      });
+    });
+  });
+  
+  letterPositions.sort(() => Math.random() - 0.5);
+  puzzleArea.innerHTML = '';
+  
+  letterPositions.forEach((item) => {
+    const btn = document.createElement("button");
+    btn.textContent = item.letter;
+    btn.style.cssText = `padding:16px 12px;font-size:18px;font-weight:600;border:2px solid ${item.threadColor};background:transparent;color:var(--inkl);border-radius:8px;cursor:pointer;transition:all 0.2s ease;font-family:inherit;`;
+    btn.dataset.threadIdx = item.threadIdx;
+    btn.dataset.threadName = item.threadName;
+    btn.dataset.threadColor = item.threadColor;
+    btn.dataset.originalPos = item.originalPos;
+    btn.dataset.clickIdx = item.clickIdx;
+    
+    btn.onmouseover = function(){
+      if(!this.classList.contains("clicked")){
+        this.style.background = item.threadColor;
+        this.style.color = "white";
+      }
+    };
+    
+    btn.onmouseout = function(){
+      if(!this.classList.contains("clicked")){
+        this.style.background = "transparent";
+        this.style.color = "var(--inkl)";
+      }
+    };
+    
+    btn.onclick = function(){
+      clickThreadLetter(stageNum, this);
+    };
+    
+    puzzleArea.appendChild(btn);
+  });
+}
+
+function clickThreadLetter(stageNum, btn){
+  const state = threadGameState[stageNum];
+  if(!state) return;
+  
+  const threadIdx = parseInt(btn.dataset.threadIdx);
+  const threadName = btn.dataset.threadName;
+  const threadColor = btn.dataset.threadColor;
+  
+  if(state.selectedThread === null){
+    state.selectedThread = threadIdx;
+  }
+  
+  if(threadIdx !== state.selectedThread){
+    const feedback = document.getElementById("feedback-"+stageNum);
+    if(feedback){
+      feedback.textContent = "⚠️ Vous changez de fil ! Recommencez avec une seule couleur.";
+      feedback.style.color = "#D85A30";
+    }
+    return;
+  }
+  
+  if(btn.classList.contains("clicked")){
+    return;
+  }
+  
+  const clickIdx = parseInt(btn.dataset.clickIdx);
+  state.answerSlots[clickIdx] = btn.textContent;
+  state.clickedCount++;
+  
+  btn.classList.add("clicked");
+  btn.style.background = threadColor;
+  btn.style.color = "white";
+  btn.disabled = true;
+  
+  updateThreadGameProgress(stageNum);
+  
+  if(state.clickedCount === state.total){
+    checkThreadGameAnswer(stageNum);
+  } else {
+    const feedback = document.getElementById("feedback-"+stageNum);
+    if(feedback) feedback.textContent = "";
+  }
+}
+
+function updateThreadGameProgress(stageNum){
+  const state = threadGameState[stageNum];
+  const countEl = document.getElementById("count-"+stageNum);
+  const revealEl = document.getElementById("revealed-"+stageNum);
+  
+  if(countEl) countEl.textContent = state.clickedCount;
+  
+  if(revealEl){
+    revealEl.textContent = state.answerSlots.map(l => l || "_").join(" ");
+  }
+}
+
+function checkThreadGameAnswer(stageNum){
+  const state = threadGameState[stageNum];
+  const guessed = state.answerSlots.join("");
+  const feedback = document.getElementById("feedback-"+stageNum);
+  const input = document.getElementById("ans"+stageNum);
+  
+  if(guessed === state.answer){
+    if(feedback){
+      feedback.innerHTML = "🏆 <strong style='color:var(--goldl);'>Exact ! Le message est "+state.answer+"</strong>";
+      feedback.style.color = "var(--goldl)";
+    }
+    if(input){
+      input.value = state.answer;
+      input.style.display = "none";
+    }
+    solved[stageNum] = true;
+    checkAnswer(stageNum);
+  } else {
+    if(feedback){
+      feedback.innerHTML = "❌ <strong style='color:#D85A30;'>Ce n'est pas le bon fil...</strong> Réessayez une autre couleur.";
+      feedback.style.color = "#D85A30";
+    }
+    resetThreadGamePuzzle(stageNum);
+  }
+}
+
+function resetThreadGamePuzzle(stageNum){
+  const state = threadGameState[stageNum];
+  if(!state) return;
+  
+  state.answerSlots = new Array(state.total).fill(null);
+  state.clickedCount = 0;
+  state.selectedThread = null;
+  
+  const feedback = document.getElementById("feedback-"+stageNum);
+  if(feedback){
+    feedback.textContent = "";
+    feedback.style.color = "var(--goldd)";
+  }
+  
+  const countEl = document.getElementById("count-"+stageNum);
+  if(countEl) countEl.textContent = "0";
+  
+  const revealEl = document.getElementById("revealed-"+stageNum);
+  if(revealEl) revealEl.textContent = Array(state.total).fill('_').join(' ');
+  
+  const puzzleArea = document.getElementById("puzzle-area-"+stageNum);
+  if(puzzleArea){
+    const buttons = puzzleArea.querySelectorAll("button");
+    buttons.forEach(btn => {
+      btn.classList.remove("clicked");
+      btn.disabled = false;
+      btn.style.background = "transparent";
+      btn.style.color = "var(--inkl)";
+    });
+  }
+}
+
 /* ── Page building ── */
 function buildPages(){
   const root = document.getElementById('pagesRoot');
@@ -1208,10 +1451,18 @@ function buildPages(){
     const blanksStr = Array(s.answer.length).fill('▁').join(' ');
     if(s.rulers){
       puzzleInner = '<div class="puzzle-intro">'+dict.rulers_label+'</div><div class="rulers-grid">'+
-        s.rulers.map(r=>'<div class="ruler-card"><b>'+r.name+'</b><br>'+r.desc+'</div>').join('')+
+        s.rulers.map(r=>'<div class="ruler-card"><div><b>'+r.name+'</b><br>'+r.desc+'</div><div class="ruler-letter">'+r.letter+'</div></div>').join('')+
         '</div>';
+    } else if(s.isThreadGame) {
+      puzzleInner = '<div class="puzzle-intro">'+s.puzzleIntro+'</div>'+
+        '<p style="text-align:center;font-size:14px;color:var(--goldd);margin:1rem 0;font-style:italic;">Suivez les couleurs. Chaque fil cache un secret.</p>'+
+        '<svg viewBox="0 0 620 280" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 2rem;max-width:100%;height:auto;"><path d="M 20 80 L 80 80 L 140 40 L 200 80 L 260 80 L 320 40 L 380 80 L 440 80 L 500 40 L 560 80 L 600 80" stroke="#D85A30" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M 20 140 L 80 140 L 140 180 L 200 140 L 260 140 L 320 180 L 380 140 L 440 140 L 500 180 L 560 140 L 600 140" stroke="#BA7517" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M 20 200 L 80 200 L 140 240 L 200 200 L 260 200 L 320 240 L 380 200 L 440 200 L 500 240 L 560 200 L 600 200" stroke="#378ADD" stroke-width="3" fill="none" stroke-linecap="round"/></svg>'+
+        '<div id="puzzle-area-'+i+'" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;"></div>'+
+        '<div style="text-align:center;margin-bottom:1.5rem;"><div style="font-size:14px;color:var(--goldd);">Lettres trouvées : <span id="count-'+i+'" style="font-weight:500;color:var(--gold);">0</span>/'+s.answer.length+'</div><div id="revealed-'+i+'" style="margin-top:0.75rem;font-size:18px;font-weight:500;letter-spacing:0.1em;color:var(--gold);min-height:32px;">'+Array(s.answer.length).fill('_').join(' ')+'</div></div>'+
+        '<div id="feedback-'+i+'" style="text-align:center;font-size:15px;margin-top:1rem;min-height:24px;"></div>'+
+        '<button onclick="resetThreadGamePuzzle('+i+')" style="display:block;margin:1.5rem auto 0;padding:12px 24px;background:var(--stone);border:1px solid rgba(201,162,39,.2);border-radius:8px;color:var(--inkl);font-size:14px;cursor:pointer;font-weight:500;">Réinitialiser</button>';
     } else {
-      puzzleInner = '<div class="puzzle-intro">'+s.puzzleIntro+'</div><div class="cipher-text">'+s.cipher+'</div>';
+      puzzleInner = '<div class="puzzle-intro">'+s.puzzleIntro+'</div>'+(s.refTable?'<div class="ref-table">'+s.refTable+'</div>':'')+'<div class="cipher-text">'+s.cipher+'</div>';
     }
 
     page.innerHTML =
@@ -1239,6 +1490,10 @@ function buildPages(){
         '<button class="navbtn" id="nextBtn'+i+'" onclick="goPage('+(i+1)+')" '+(solved[i]?'':'disabled')+'>'+dict.btn_next+'</button>'+
       '</div>';
     root.appendChild(page);
+
+    if(s.isThreadGame){
+      initThreadGamePuzzle(i, s.cipher, s.answer);
+    }
 
     if(solved[i]){
       const inp = page.querySelector('#ans'+i);
