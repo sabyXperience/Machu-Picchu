@@ -1227,7 +1227,14 @@ function toggleMJ(){
 function toggleHint(n){
   const h = document.getElementById('hint'+n);
   if(!h) return;
+  const willShow = !h.classList.contains('show');
   h.classList.toggle('show');
+  if(willShow && typeof gtag === 'function'){
+    gtag('event', 'indice_utilise', {
+      'pseudo': getPlayerName(),
+      'etape': n
+    });
+  }
 }
 
 /* ── Thread Game ── */
@@ -1400,6 +1407,13 @@ function checkAnswer(n){
     if(nb) nb.removeAttribute('disabled');
     renderDots();
     saveProgress();
+    if(typeof gtag === 'function'){
+      gtag('event', 'etape_terminee', {
+        'pseudo': getPlayerName(),
+        'etape': n,
+        'temps_ecoule_s': gameStartTs ? Math.round((Date.now()-gameStartTs)/1000) : null
+      });
+    }
     setTimeout(()=>{ goPage(n+1, true); }, 900);
   } else {
     fb.textContent = dict.err_msg;
@@ -1460,6 +1474,12 @@ function finishGame(){
   document.getElementById('felicWord').textContent = FINAL_MAP[currentLang].target;
   showFinalTime();
   updateFelicName();
+  if(typeof gtag === 'function'){
+    gtag('event', 'jeu_complete', {
+      'pseudo': getPlayerName(),
+      'temps_total_s': Math.round(gameFinalMs/1000)
+    });
+  }
 }
 
 /* ── Init ── */
